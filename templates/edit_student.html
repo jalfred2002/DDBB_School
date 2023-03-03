@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{{student.name}}</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="" />
+    </head>
+    <body>
+        <form action="{% url 'Student' student.id %}" method="post">
+            {% csrf_token %}
+            <input name="id" type="hidden" value="{{student.id}}" />
+            <input name="name" type="text" value="{{student.name}}" />
+            <input name="document" type="text" value="{{student.document}}" />
+            <input type="submit" />
+        </form>
+    </body>
+</html>

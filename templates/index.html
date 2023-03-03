@@ -8,8 +8,23 @@
         <link rel="stylesheet" href="" />
     </head>
     <body>
-        {% for student in object_list %}
-        <h3>{{student.name}}</h3>
-        {% endfor %}
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Document</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in object_list %}
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.document}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </body>
 </html>
